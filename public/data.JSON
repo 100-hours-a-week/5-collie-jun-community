@@ -1,0 +1,15 @@
+{
+    "users": [
+      {
+        "nickname" : "더미1",
+        "email": "user1@example.com",
+        "password": "password1"
+      },
+      {
+        "nickname" : "더미2",
+        "email": "user2@example.com",
+        "password": "password2"
+      }
+    ]
+  }
+  

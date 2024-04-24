@@ -1,0 +1,158 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap");
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: #F4F5F7;
+    font-family: "Noto Sans KR", sans-serif;
+  }
+    .header {
+        display: flex;
+        align-items: center;
+    }
+
+    h1 {
+    width: auto;
+    font-size: 32px;
+    font-weight: 400;
+    line-height: 32px;
+    text-align: center;
+    margin-left: 145px;
+    margin-right: 145px;
+    }
+    
+    .beforebutton {
+        cursor: pointer;
+        width: 36px;
+        height: 36px;
+        background-color:#F4F5F7;
+        color: #000000;
+        border-radius: 16px; 
+    }
+    
+    .beforebutton:hover {
+        background-color: #7f6aee;
+    }
+    .horizontal-line {
+        width: 1920px; 
+        height: 1px; 
+        background-color: black; 
+    }
+   
+    h2 {
+        font-size: 32px;
+        font-weight: 700;
+        line-height: 38.19px;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    .profile-picture h4 {
+        font-size: 12px;
+        font-weight: 400;
+        line-height: 14.52px;
+        text-align: left;
+        color: #FF0000;
+        position: relative; /* 위치 지정을 위한 상대 위치 설정 */
+        top: -10px; /* 원하는 만큼 위로 이동 */
+    }
+    h3 { 
+        width: 75px;
+        height: 18px;
+        font-size: 15px;
+        font-weight: 700;
+        line-height: 17.9px;
+        text-align: left;
+    }
+    .profile-picture {
+        margin-bottom: 20px;
+    }
+    .profile {
+        position: relative;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .profile-picture label {   
+        display: block;
+        width: 149px;
+        height: 149px;
+        border-radius: 50%;
+        background-color: #c4c4c4;
+        font-size: 24px;
+        line-height: 149px;
+        text-align: center;
+        border: 1px;
+        color: #000000;
+        cursor: pointer;
+    }
+
+    .profile-picture input[type="file"] {
+        display: none;
+    }
+
+
+    .form-group {
+        height: 82px;
+        margin-top: 0px;
+    }
+    
+    .form-group label {
+        display: block;
+        color: #000000;
+    }
+    
+    .form-group input {
+        width: 355px;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+    }
+    
+    .form-group h4 {
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 14.52px;
+    text-align: left;
+    margin-top: 5px;
+    color: #FF0000;
+    }
+
+    button {
+        width: 100%;
+        padding: 10px;
+        background-color: #aca0eb;
+        color: #fff;
+        border: none;
+        border-radius: 3px;
+        cursor: pointer;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 20px;
+    }
+    
+    button:hover {
+        background-color: #7f6aee;
+    }
+
+    .login-link {
+        text-align: center; /* 수평 가운데 정렬 */
+    }
+
+    .login-link a {
+        width: 355px;
+        justify-content: center;
+        align-items: center;
+        color:#000000;
+        display: inline-block; /* 인라인 요소로 변경하여 가로 정렬 */
+        margin: 0 auto; /* 가로 중앙 정렬 */
+    }
+    
+    .login-link:hover {
+        text-decoration: underline; 
+        cursor: pointer; 
+    }

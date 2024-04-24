@@ -1,0 +1,77 @@
+[
+    {
+      "id": 1,
+      "title": "첫 번째 게시글",
+      "content": "이것은 첫 번째 게시글의 내용입니다.",
+      "post_image": "https://picsum.photos/id/1/200/300",
+      "comments": 15,
+      "likes": 20,
+      "views": 100,
+      "timestamp": "2024-04-18 12:30:00",
+      "profile_image": "https://randomuser.me/api/portraits/men/4.jpg",
+      "nickname": "더미1"
+      
+    },
+    {
+      "id": 2,
+      "title": "두 번째 게시글",
+      "content": "이것은 두 번째 게시글의 내용입니다.",
+      "post_image": "https://picsum.photos/id/2/200/300",
+      "comments": 10,
+      "likes": 25,
+      "views": 80,
+      "profile_image": "https://randomuser.me/api/portraits/men/5.jpg",
+      "nickname": "더미2",
+      "timestamp": "2024-04-19 09:45:00"
+    },
+    {
+      "id": 3,
+      "title": "세 번째 게시글",
+      "content": "이것은 세 번째 게시글의 내용입니다.",
+      "post_image": "https://picsum.photos/id/3/200/300",
+      "comments": 8,
+      "likes": 18, 
+      "views": 120,
+      "profile_image": "https://randomuser.me/api/portraits/men/6.jpg",
+      "nickname": "더미3",
+      "timestamp": "2024-04-20 15:20:00"
+    }
+    ,
+    {
+      "id": 4,
+      "title": "네 번째 게시글",
+      "content": "이것은 네 번째 게시글의 내용입니다.",
+      "post_image": "https://picsum.photos/id/4/200/300",
+      "comments": 29,
+      "likes": 135,
+      "views": 200,
+      "timestamp": "2024-04-20 17:30:00",
+      "profile_image": "https://randomuser.me/api/portraits/men/7.jpg",
+      "nickname": "더미4"
+      
+    },
+    {
+      "id": 5,
+      "title": "다섯 번째 게시글",
+      "content": "이것은 다섯 번째 게시글의 내용입니다.",
+      "post_image": "https://picsum.photos/id/5/200/300",
+      "comments": 4,
+      "likes": 9,
+      "views": 18,
+      "profile_image": "https://randomuser.me/api/portraits/men/8.jpg",
+      "nickname": "더미5",
+      "timestamp": "2024-04-21 09:30:00"
+    },
+    {
+      "id": 6,
+      "title": "여섯 번째 게시글",
+      "content": "이것은 여섯 번째 게시글의 내용입니다.",
+      "post_image": "https://picsum.photos/id/6/200/300",
+      "comments": 23,
+      "likes": 35, 
+      "views": 129,
+      "profile_image": "https://randomuser.me/api/portraits/men/9.jpg",
+      "nickname": "더미6",
+      "timestamp": "2024-04-22 11:20:00"
+    }
+]
