@@ -1,6 +1,6 @@
-"use strict"; 
+"use strict";
 
-//등록하기 버튼 클릭시 makepost로 이동
+// 등록하기 버튼 클릭시 makepost로 이동
 document.querySelector('.post-list button').addEventListener('click', function(event) {
     event.preventDefault(); // 기본 제출 동작을 막음
     window.location.href = "/makepost"; // 이동할 URL 지정
@@ -62,75 +62,74 @@ function createPostElement(postData) {
         window.location.href = `/post/${postData.id}`; // 이동할 URL 지정
     });
 
-    // 게시글 이미지 추가
-    var imageElement = document.createElement('img');
-    imageElement.classList.add('post-image');
-    imageElement.setAttribute('src', postData.post_image); // post_image 속성 추가
-    postElement.appendChild(imageElement);
-
-    // 게시글 제목 추가
-    var titleElement = document.createElement('h2');
+    // 게시글 제목 요소 생성
+    var titleElement = document.createElement('h3');
     titleElement.textContent = postData.title;
+    titleElement.classList.add('post-title'); // post-title 클래스 추가
+
+    // postElement에 제목 요소 추가
     postElement.appendChild(titleElement);
 
+    // 게시글 정보 추가
+    var postInfo = document.createElement('div');
+    postInfo.classList.add('post-info');
+
+    // 좋아요, 댓글, 조회수 추가
+    var likeComment = document.createElement('div');
+    likeComment.classList.add('like-comment');
+
+    var postLikes = document.createElement('span');
+    postLikes.classList.add('post-likes');
+    postLikes.textContent = '좋아요 ' + postData.likes;
+    likeComment.appendChild(postLikes);
+
+    var postComments = document.createElement('span');
+    postComments.classList.add('post-comments');
+    postComments.textContent = '댓글 ' + postData.comments;
+    likeComment.appendChild(postComments);
+
+    var postViews = document.createElement('span');
+    postViews.classList.add('post-views');
+    postViews.textContent = '조회수 ' + postData.views;
+    likeComment.appendChild(postViews);
+
+    postInfo.appendChild(likeComment);
+
+    // 작성 일자 추가
+    var postDate = document.createElement('span');
+    postDate.classList.add('post-date');
+    postDate.textContent = postData.timestamp;
+    postInfo.appendChild(postDate);
+
+    postElement.appendChild(postInfo);
+
+    // 가로줄 추가
+    var horizontalLine = document.createElement('hr');
+    postElement.appendChild(horizontalLine);
+
     // 작성자 정보 추가
-    var authorDiv = document.createElement('div');
-    authorDiv.classList.add('author');
+    var authorElement = document.createElement('div');
+    authorElement.classList.add('author');
 
     // 작성자 프로필 이미지 추가
-    var profileImage = document.createElement('div');
-    profileImage.classList.add('gray-circle');
-
     var profileImageElement = document.createElement('img');
     profileImageElement.setAttribute('src', postData.profile_image);
-    profileImageElement.classList.add('profile-image'); // 추가된 부분
+    profileImageElement.classList.add('gray-circle'); // gray-circle 클래스 추가
 
-    profileImage.appendChild(profileImageElement);
-    authorDiv.appendChild(profileImage);
+    var profileImageContainer = document.createElement('div');
+    profileImageContainer.appendChild(profileImageElement);
+    authorElement.appendChild(profileImageContainer);
 
-    // 작성자 닉네임 추가
+    // 작성자 이름 추가
     var authorName = document.createElement('p');
     authorName.classList.add('post-author');
     authorName.textContent = postData.nickname;
-    authorDiv.appendChild(authorName);
+    authorElement.appendChild(authorName);
 
-    // 작성 일자 추가
-    var dateSpan = document.createElement('span');
-    dateSpan.classList.add('date');
-    dateSpan.textContent = postData.timestamp;
-    authorDiv.appendChild(dateSpan);
-
-    postElement.appendChild(authorDiv);
-
-    // 게시글 내용 추가
-    var postContent = document.createElement('div');
-    postContent.classList.add('post-content');
-
-    // 게시글 내용이 많으므로 간략하게 줄입니다.
-    var postText = document.createElement('p');
-    postText.textContent = postData.content.substring(0, 100) + '...';
-    postContent.appendChild(postText);
-    postElement.appendChild(postContent);
-
-    // 댓글, 조회수 추가
-    var postComments = document.createElement('div');
-    postComments.classList.add('post-comments');
-
-    var postCount = document.createElement('div');
-    postCount.classList.add('post-count');
-    postCount.textContent = postData.views + '조회수';
-    postComments.appendChild(postCount);
-
-    var commentCount = document.createElement('div');
-    commentCount.classList.add('comment-count');
-    commentCount.textContent = postData.comments + '댓글';
-    postComments.appendChild(commentCount);
-
-    postElement.appendChild(postComments);
+    postElement.appendChild(authorElement);
 
     return postElement;
 }
-
 
 // 게시글 컨테이너
 var postsContainer = document.getElementById('posts-container');

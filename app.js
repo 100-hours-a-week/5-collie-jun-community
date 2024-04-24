@@ -7,39 +7,37 @@ const port = 3000;
 app.use(express.static('public'));
 
 app.get('/login', (req, res) => {
-  res.sendFile(path.join(__dirname, '/public/login new.html'));
+  res.sendFile(path.join(__dirname, 'public', 'login new.html'));
 });
 
 app.get('/signin', (req, res) => {
-  res.sendFile(path.join(__dirname, '/public/signin new.html'));
+  res.sendFile(path.join(__dirname, 'public', 'signin new.html'));
 });
 
 app.get('/main', (req, res) => {
-  res.sendFile(path.join(__dirname, '/public/main.html'));
+  res.sendFile(path.join(__dirname, 'public', 'main.html'));
 });
 
 app.get('/makepost', (req, res) => {
-  res.sendFile(path.join(__dirname, '/public/makepost.html'));
+  res.sendFile(path.join(__dirname, 'public', 'makepost.html'));
 });
 
-// app.get('/post', (req, res) => {
-//   res.sendFile(path.join(__dirname, '/public/post.html'));
-// });
-
+// 개별 게시물 보기 페이지 라우팅d
 app.get('/post/:id', (req, res) => {
-  res.sendFile(path.join(__dirname,  '/public/post.html'));
+  const postId = req.params.id;
+  res.sendFile(path.join(__dirname, 'public', 'post.html'));
 });
 
 app.get('/editpost', (req, res) => {
-  res.sendFile(path.join(__dirname, '/public/editpost.html'));
+  res.sendFile(path.join(__dirname, 'public', 'editpost.html'));
 });
 
 app.get('/editpassword', (req, res) => {
-  res.sendFile(path.join(__dirname, '/public/edit password.html'));
+  res.sendFile(path.join(__dirname, 'public', 'edit password.html'));
 });
 
 app.get('/editprofile', (req, res) => {
-  res.sendFile(path.join(__dirname, '/public/edit profile.html'));
+  res.sendFile(path.join(__dirname, 'public', 'edit profile.html'));
 });
 
 app.listen(port, () => {
@@ -54,6 +52,3 @@ app.listen(port, () => {
 //게시물 수정 페이지: http://localhost:3000/editpost
 //비밀번호 수정 페이지: http://localhost:3000/editpassword
 //프로필 수정 페이지: http://localhost:3000/editprofile
-
-// app.js 파일 내부
-
