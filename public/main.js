@@ -57,10 +57,14 @@ function createPostElement(postData) {
     var postElement = document.createElement('div');
     postElement.classList.add('post');
 
-    // click event
-    postElement.addEventListener('click', () => {
-        window.location.href = `/post/${postData.id}`; // 이동할 URL 지정
-    });
+ 
+// click event
+postElement.addEventListener('click', () => {
+    const postId = postData.id;
+    window.location.href = `/post.html?postId=${postId}`; // 이동할 URL 지정
+});
+
+
 
     // 게시글 제목 요소 생성
     var titleElement = document.createElement('h3');

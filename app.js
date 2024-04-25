@@ -22,13 +22,13 @@ app.get('/makepost', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'makepost.html'));
 });
 
-// 개별 게시물 보기 페이지 라우팅d
+// 개별 게시물 보기 페이지 라우팅
 app.get('/post/:id', (req, res) => {
   const postId = req.params.id;
-  res.sendFile(path.join(__dirname, 'public', 'post.html'));
+  res.sendFile(path.join(__dirname, 'public', 'post.html')); // 게시물 보기 페이지 파일을 전송
 });
 
-app.get('/editpost', (req, res) => {
+app.get('/editpost/:id', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'editpost.html'));
 });
 
@@ -43,12 +43,3 @@ app.get('/editprofile', (req, res) => {
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`);
 });
-
-//로그인 페이지: http://localhost:3000/login
-//가입 페이지: http://localhost:3000/signin
-//메인 페이지: http://localhost:3000/main
-//게시물 작성 페이지: http://localhost:3000/makepost
-//게시물 보기 페이지: http://localhost:3000/post
-//게시물 수정 페이지: http://localhost:3000/editpost
-//비밀번호 수정 페이지: http://localhost:3000/editpassword
-//프로필 수정 페이지: http://localhost:3000/editprofile

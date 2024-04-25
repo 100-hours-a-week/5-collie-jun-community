@@ -42,3 +42,23 @@ document.querySelector('.dropdown-content a:nth-of-type(3)')
     event.preventDefault(); // 링크 기본 동작 막음
     window.location.href = "/login"; // 이동할 URL 지정
 });
+
+async function fetchPosts() {
+    try {
+        const response = await fetch('/postdata.json'); // JSON 파일 경로 수정
+        const jsonData = await response.json();
+
+        // urlParams 사용하지 않고, JSON 데이터로부터 바로 가져옴
+        const postId = urlParams.get('postId'); 
+        const post = jsonData.find(post => post.id === postId); // id와 일치하는 게시물 가져오기
+
+        // 제목과 내용 필드 채우기
+        document.getElementById('title').value = post.title;
+        document.getElementById('content').value = post.content;
+    } catch (error) {
+        console.error('Error fetching posts:', error);
+    }
+}
+
+// 페이지 로드 시 실행
+window.onload = fetchPosts;
