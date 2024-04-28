@@ -23,6 +23,14 @@ document.querySelector('.image')
     dropdownContent.classList.toggle('show');
 });
 
+// 문서 클릭 이벤트
+document.addEventListener('click', function() {
+    var dropdownContent = document.getElementById('dropdownContent');
+    if (dropdownContent.classList.contains('show')) {
+        dropdownContent.classList.remove('show');
+    }
+});
+
 // 회원정보 수정 클릭 이벤트
 document.querySelector('.dropdown-content a:nth-of-type(1)')
 .addEventListener('click', function(event) {
@@ -106,22 +114,4 @@ document.querySelector('.modal-check')
     window.location.href = "/login"; // 이동할 URL 지정
 });
 
-async function fetchPosts() {
-    try {
-        const response = await fetch('/postdata.json'); // JSON 파일 경로 수정
-        const jsonData = await response.json();
 
-        // urlParams 사용하지 않고, JSON 데이터로부터 바로 가져옴
-        const postId = 1; // 예시로 하드코딩된 id
-        const post = jsonData.find(post => post.id === postId); // id와 일치하는 게시물 가져오기
-
-        // 제목과 내용 필드 채우기
-        document.getElementById('title').value = post.title;
-        document.getElementById('content').value = post.content;
-    } catch (error) {
-        console.error('Error fetching posts:', error);
-    }
-}
-
-// 페이지 로드 시 실행
-window.onload = fetchPosts;

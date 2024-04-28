@@ -44,17 +44,27 @@ document.querySelector('.dropdown-content a:nth-of-type(3)')
 });
 
 async function fetchPosts() {
+    const urlParams = new URLSearchParams(window.location.search); // 여기로 이동
     try {
         const response = await fetch('/postdata.json'); // JSON 파일 경로 수정
         const jsonData = await response.json();
 
+        console.log(urlParams);
         // urlParams 사용하지 않고, JSON 데이터로부터 바로 가져옴
         const postId = urlParams.get('postId'); 
-        const post = jsonData.find(post => post.id === postId); // id와 일치하는 게시물 가져오기
+        const post = jsonData.find(post => post.id == postId); // id와 일치하는 게시물 가져오기
 
         // 제목과 내용 필드 채우기
         document.getElementById('title').value = post.title;
         document.getElementById('content').value = post.content;
+
+        document.getElementById('post-form').addEventListener('submit', function(event) {
+        event.preventDefault(); // 기본 제출 동작 막기
+        const postId = urlParams.get('postId'); // postId 가져오기
+        const url = `/post.html?postId=${postId}`;// 폼 데이터를 제출할 URL 생성
+        window.location.href = url;
+        });
+        
     } catch (error) {
         console.error('Error fetching posts:', error);
     }

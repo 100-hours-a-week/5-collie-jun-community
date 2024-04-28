@@ -22,11 +22,13 @@ app.get('/makepost', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'makepost.html'));
 });
 
+/*
 // 개별 게시물 보기 페이지 라우팅
 app.get('/post/:id', (req, res) => {
   const postId = req.params.id;
   res.sendFile(path.join(__dirname, 'public', 'post.html')); // 게시물 보기 페이지 파일을 전송
-});
+});*/
+
 
 app.get('/editpost/:id', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'editpost.html'));
@@ -38,6 +40,10 @@ app.get('/editpassword', (req, res) => {
 
 app.get('/editprofile', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'edit profile.html'));
+});
+
+app.get('/postnew', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'post new.html'));
 });
 
 app.listen(port, () => {
