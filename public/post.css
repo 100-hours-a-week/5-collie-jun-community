@@ -130,6 +130,20 @@ background-color: black;
         background-color: #7f6aee;
     }
 
+
+    .commentmodal {
+        position: fixed; /* 이전에는 absolute였으나, modal은 화면 중앙에 고정되어야 하므로 fixed로 변경 */
+        display: none;
+        justify-content: center;
+        align-items: center; /* 수직 가운데 정렬을 위해 추가 */
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.4);
+        z-index: 1;
+        }
+
 .comment-modal-body {
     width: 408px;
     height: 242px;
@@ -202,7 +216,15 @@ background-color: black;
         cursor: pointer; 
         background-color: #7f6aee;
     }
-
+.post {
+    width: 544px;
+}
+.posts-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
 .post-header {
     width: 544px;
 }
@@ -270,12 +292,24 @@ margin-left: auto;
     margin-top: 10px;
     margin-bottom: 10px;
 }
+.comments {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
 .post-comments {
     display: flex;
     align-items: center;
     justify-content: center; /* 가운데 정렬 */
     margin-top: 10px;
     margin-bottom: 10px;
+}
+.comment {
+    width: 544px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .post-count,
@@ -297,11 +331,6 @@ margin-left: auto;
     height: 169px;
     background-color: white;
     border-radius: 16px;
-}
-.comment {
-    display: flex;
-    justify-content: space-between; /* 가운데 정렬 */
-    align-items: center;
 }
 .comment-input-container {
     position: relative;
@@ -351,12 +380,22 @@ margin-left: auto;
 .comment-date {
     margin-left: 10px;
 }
-.comment-content {
+.firstcomment-content {
+    margin-top: 15px;
+    margin-bottom: 10px;
+    margin-left: 55px;
+}
+.secondcomment-content {
     margin-top: 15px;
     margin-bottom: 10px;
     margin-left: 55px;
 }
 .firstcomment {
+    display: flex; /* 부모 요소를 플렉스 박스로 설정 */
+    justify-content: space-between; /* 자식 요소를 가로로 분배 */
+    align-items: center; /* 수직 가운데 정렬 */
+}
+.secondcomment {
     display: flex; /* 부모 요소를 플렉스 박스로 설정 */
     justify-content: space-between; /* 자식 요소를 가로로 분배 */
     align-items: center; /* 수직 가운데 정렬 */
