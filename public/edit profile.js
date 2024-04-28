@@ -3,6 +3,7 @@
 //수정 완료 버튼
 document.querySelector('.edit-button')
 .addEventListener('click', function(event) {
+    alert('수정 완료되었습니다.메인페이지로 이동합니다.');
     event.preventDefault(); // 기본 제출 동작을 막음
     window.location.href = "/main"; // 이동할 URL 지정
 });
@@ -10,8 +11,7 @@ document.querySelector('.edit-button')
 //수정 하기 버튼
 document.querySelector('.submit-button')
 .addEventListener('click', function(event) {
-    event.preventDefault(); // 기본 제출 동작을 막음
-    window.location.href = "/main"; // 이동할 URL 지정
+    alert('수정되었습니다.');
 });
 
 //상부 드롭다운

@@ -64,6 +64,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 } else {
                     // 로그인 성공
                     // 예: 다음 페이지로 리다이렉트
+                    alert('로그인했습니다.');
                     window.location.href = "/main";
                 }
             })
