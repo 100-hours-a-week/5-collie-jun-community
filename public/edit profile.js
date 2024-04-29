@@ -12,6 +12,8 @@ document.querySelector('.edit-button')
 document.querySelector('.submit-button')
 .addEventListener('click', function(event) {
     alert('수정되었습니다.');
+    event.preventDefault(); // 기본 제출 동작을 막음
+    window.location.href = "/main"; // 이동할 URL 지정
 });
 
 //상부 드롭다운

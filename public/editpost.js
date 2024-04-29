@@ -4,8 +4,22 @@
 document.querySelector('.beforebutton')
 .addEventListener('click', function(event) {
     event.preventDefault(); // 기본 제출 동작을 막음
-    window.location.href = "/main"; // 이동할 URL 지정
+    
+    // 현재 페이지 URL에서 postId 값을 추출
+    const urlParams = new URLSearchParams(window.location.search);
+    const postId = urlParams.get('postId');
+
+    // postId가 존재하는지 확인하고 이동할 URL 지정
+    if (postId) {
+        window.location.href = `/post.html?postId=${postId}`;
+    } else {
+        // postId가 존재하지 않을 경우 처리
+        console.error('postId is not defined');
+        // 이동할 기본 URL 지정 또는 다른 처리 수행
+        // window.location.href = '/defaultPage.html';
+    }
 });
+
 // 이미지 클릭 이벤트
 document.querySelector('.image')
 .addEventListener('click', function(event) {
