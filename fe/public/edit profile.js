@@ -55,6 +55,8 @@ document.querySelector('.dropdown-content a:nth-of-type(3)')
 });
 
 
+// 프론트엔드 코드
+
 document.addEventListener("DOMContentLoaded", function() {
     const nicknameInput = document.getElementById('nickname');
     const nicknameHelperText = document.querySelector('#nickname-helper');
@@ -74,7 +76,7 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 
     function checkNicknameDuplicate(nickname) {
-        fetch('data.json')
+        fetch('.data.JSON')
             .then(response => response.json())
             .then(data => {
                 const duplicateNickname = data.users.some(user => user.nickname === nickname);
@@ -87,6 +89,7 @@ document.addEventListener("DOMContentLoaded", function() {
             .catch(error => console.error('Error fetching data:', error));
     }
 });
+
 
 // 문서 클릭 이벤트
 document.addEventListener("DOMContentLoaded", function() {
