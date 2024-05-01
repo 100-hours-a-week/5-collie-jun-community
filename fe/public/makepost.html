@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>make post</title>
+    <link rel="stylesheet" href="makepost.css">
+</head>
+<body>
+    <div class="header">
+        <button class="beforebutton">&lt;</button>
+        <h1>아무 말 대잔치</h1>
+        <div class="dropdown-form">
+            <img class="image" src="image1.png">
+            <div class="dropdown-content" id="dropdownContent">
+              <a href="#">회원정보 수정</a>
+              <a href="#">비밀번호 수정</a>
+              <a href="#">로그아웃</a>
+            </div>
+          </div>
+    </div>
+    <div class="horizontal-line"></div>
+    <h2>게시글 작성</h2>
+    <form id="post-form">
+        <div class="form-group">
+          <label for="title">제목</label>
+          <input type="text" id="title" name="title" placeholder="제목을 입력해주세요.(최대 26글자)" required>
+        </div>
+        <div class="form-group">
+          <label for="content">내용</label>
+          <textarea id="content" name="content" rows="20" placeholder="내용을입력해주세요." required></textarea>
+        </div>
+        <h3 id="helper-text">*helper text</h3>
+        <div class="form-group">
+            <label for="image">이미지</label>
+            <input type="file" id="image" name="image" accept="image/*">
+          </div>
+    <button class="submit">완료</button>
+    </form>
+    <script src="makepost.js"></script> <!-- JavaScript 파일 연결 --> 
+    </body>
+    </html>

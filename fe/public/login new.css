@@ -1,0 +1,96 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap");
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: #F4F5F7;
+    font-family: "Noto Sans KR", sans-serif;
+  }
+.header {
+height: 104px;
+justify-content: center;
+text-align: center;
+max-width: 1920px;
+}  
+h1 {
+width: auto;
+font-size: 32px;
+font-weight: 400;
+line-height: 32px;
+text-align: center;
+margin-right: 20px;
+}
+
+.horizontal-line {
+width: 1920px; 
+height: 1px; 
+background-color: black; 
+}
+
+h2 {
+margin-top: 140px;
+font-size: 32px;
+font-weight: 700;
+line-height: 38.19px;
+text-align: center;
+}
+/*완벽하게 이해한곳*/
+
+.form-group {
+    margin-bottom: 20px;
+    text-align: left;
+    width: 392px;
+}
+
+label {
+    display: block; /* 라벨을 블록 요소로 표시하여 위에서 아래로 표시 */
+    margin-bottom: 5px;
+}
+
+input[type="email"],
+input[type="password"] {
+    width: calc(100% - 20px);
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+input[type="email"]::placeholder,
+input[type="password"]::placeholder {
+    color: #999;
+}
+h3 {
+position: relative; /* 위치 지정을 위한 상대 위치 설정 */
+top: -10px; /* 원하는 만큼 위로 이동 */
+margin-top: -10px;
+font-size: 12px;
+font-weight: 400;
+line-height: 14.52px;
+text-align: left;
+color: #ff0000; 
+}
+button {
+    width: 383px;
+    padding: 10px;
+    background-color: #aca0eb;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}button:hover {
+    background-color: #7f6aee;
+}
+.signup-link {
+    width: 383px;
+    display: block;
+    text-align: center;
+    margin-top: 10px; 
+    color: #333; 
+    font-size: 16px;
+}
+.signup-link:hover {
+    text-decoration: underline; 
+    cursor: pointer; 
+}
