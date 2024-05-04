@@ -41,37 +41,28 @@ document.querySelector('.dropdown-content a:nth-of-type(3)').addEventListener('c
 
 
 // JSON 데이터를 가져오는 함수
-async function fetchPosts() {
+// JSON 데이터를 가져오는 함수
+async function fetchPostsFromBackend() {
     try {
-        const response = await fetch('postdata.json'); // JSON 파일 경로 수정
+        const response = await fetch('http://localhost:8081/post/posts'); // 백엔드 API 엔드포인트 호출
         const jsonData = await response.json();
         return jsonData;
     } catch (error) {
-        console.error('Error fetching posts:', error);
+        console.error('Error fetching posts from backend:', error);
         return [];
     }
 }
+
 
 // 게시글을 생성하는 함수
 function createPostElement(postData) {
     var postElement = document.createElement('div');
     postElement.classList.add('post');
 
- 
-// click event
-postElement.addEventListener('click', () => {
-    const postId = postData.id;
-    window.location.href = `/post.html?postId=${postId}`; // 이동할 URL 지정
-});
-
-
-
     // 게시글 제목 요소 생성
     var titleElement = document.createElement('h3');
     titleElement.textContent = postData.title;
     titleElement.classList.add('post-title'); // post-title 클래스 추가
-
-    // postElement에 제목 요소 추가
     postElement.appendChild(titleElement);
 
     // 게시글 정보 추가
@@ -139,12 +130,18 @@ postElement.addEventListener('click', () => {
 var postsContainer = document.getElementById('posts-container');
 
 // JSON 데이터를 가져와서 게시글 생성 후 추가
-fetchPosts().then(function(jsonData) {
+fetchPostsFromBackend().then(function(jsonData) {
     // 게시글 컨테이너가 존재하는지 확인
     if (postsContainer) {
         jsonData.forEach(function(postData) {
             var postElement = createPostElement(postData);
             postsContainer.appendChild(postElement);
+
+            // 이벤트 핸들러 등록
+            postElement.addEventListener('click', () => {
+                const postId = postData.id;
+                window.location.href = `/post.html?postId=${postId}`; // 이동할 URL 지정
+            });
         });
     } else {
         console.error('게시글 컨테이너를 찾을 수 없습니다.');

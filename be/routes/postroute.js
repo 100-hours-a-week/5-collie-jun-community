@@ -4,6 +4,6 @@ const path = require('path');
 const router = express.Router();
 const controller = require(path.join(__dirname, '..', 'controllers', 'postcontroller.js'));
 
-router.post('/main', controller.getMainPosts);
+router.get('/posts', controller.getAllPosts);
 
 module.exports = router;

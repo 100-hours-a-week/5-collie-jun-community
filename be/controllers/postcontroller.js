@@ -4,6 +4,19 @@ const fs = require("fs");
 const jsonFilePath =
   "/Users/jeon-yeonju/Desktop/expressjs/5-collie-jun-community/be/model/postdata.JSON";
 
+// 모든 포스트를 가져오는 함수
+const getAllPosts = async (req, res) => {
+    try {
+        const posts = await fetchPosts();
+        res.json(posts);
+    } catch (error) {
+        console.error('Error fetching posts:', error);
+        res.status(500).json({ error: 'Internal Server Error' });
+    }
+};
+
+  ////나중에 지울 내용////
+
 // 메인 포스트를 가져오는 함수
 const fetchPosts = async () => {
     return new Promise((resolve, reject) => {
@@ -17,18 +30,7 @@ const fetchPosts = async () => {
     });
 };
 
-// 메인 포스트를 가져오는 함수
-const getMainPosts = async (req, res) => {
-    try {
-        const posts = await fetchPosts();
-        res.json(posts);
-    } catch (error) {
-        console.error('Error fetching main posts:', error);
-        res.status(500).json({ error: '서버 오류: 메인 포스트를 불러오는 중 오류가 발생했습니다.' });
-    }
-};
-
 // 외부에서 사용할 수 있도록 모듈로 내보냅니다.
 module.exports = {
-    getMainPosts,
+    getAllPosts,
 };

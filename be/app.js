@@ -22,7 +22,7 @@ app.use(
 //app.use(cors());
 app.use("/users", userRoutes); // userRoutes를 사용합니다.
 app.use("/", userRoutes);
-app.use("/posts", postRoutes);
+app.use("/post",postRoutes);
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`);
