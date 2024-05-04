@@ -57,6 +57,33 @@ document
     event.preventDefault(); // 링크 기본 동작 막음
     window.location.href = "/login"; // 이동할 URL 지정
   });
+  
+// 이미지를 클릭하여 파일 선택창 열기
+document.querySelector('.image1').addEventListener('click', function() {
+  document.getElementById('profile-pic').click();
+});
+
+// 파일 입력(input) 요소에 change 이벤트 리스너 추가
+document.getElementById('profile-pic').addEventListener('change', function(event) {
+  const selectedFile = event.target.files[0]; // 선택한 파일 가져오기
+
+  // 파일이 선택되었는지 확인
+  if (selectedFile) {
+      const reader = new FileReader(); // FileReader 객체 생성
+
+      // 파일 읽기
+      reader.readAsDataURL(selectedFile);
+
+      // 읽기가 완료되었을 때의 이벤트 핸들러
+      reader.onload = function() {
+          const imageElement = document.querySelector('.image1'); // 화면에 표시할 이미지 요소 가져오기
+          imageElement.src = reader.result; // 이미지 요소의 src 속성에 읽은 데이터(이미지) 할당하여 화면에 표시
+          imageElement.classList.add('rounded-image'); // 이미지 요소에 동그랗게 보이도록 클래스 추가
+      }
+  }
+});
+
+
 
 document.addEventListener("DOMContentLoaded", function () {
   const nicknameInput = document.getElementById("nickname");

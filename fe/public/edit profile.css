@@ -139,6 +139,13 @@ h3 {
     width: 149px;
     height: 149px;
 }
+.image1:hover {
+    cursor: pointer; 
+}
+.rounded-image {
+    border-radius: 50%; /* 동그랗게 보이도록 원 형태로 경계선을 만듭니다. */
+  }
+  
 .profile {
     position: relative;
     border-radius: 50%;
