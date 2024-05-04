@@ -90,19 +90,27 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     });
 
-    function checkNicknameDuplicate(nickname) {
-        fetch('data.json')
-            .then(response => response.json())
-            .then(data => {
-                const duplicateNickname = data.users.some(user => user.nickname === nickname);
-                if (duplicateNickname) {
-                    nicknameHelperText.textContent = '*중복된 닉네임입니다';
-                } else {
-                    nicknameHelperText.textContent = '';
-                }
-            })
-            .catch(error => console.error('Error fetching data:', error));
-    }
+    //여기는 성공
+  function checkNicknameDuplicate(nickname) {
+    fetch("http://localhost:8081/users/check-nickname", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ nickname }),
+    })
+      .then((response) => response.json())
+      .then((result) => {
+        if (result.isDuplicate) {
+          nicknameHelperText.textContent = "*중복된 닉네임입니다";
+        } else {
+          nicknameHelperText.textContent = "";
+        }
+      })
+      .catch((error) =>
+        console.error("Error checking nickname duplicate:", error)
+      );
+  }
 
     document.querySelector('.submit')
     .addEventListener('click', function(event) {
@@ -144,4 +152,57 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     });
 
+});
+document.getElementById('profile-pic').addEventListener('change', function() {
+    var file = this.files[0]; // 선택된 파일 가져오기
+    var reader = new FileReader(); // 파일 리더 객체 생성
+
+    reader.onload = function(e) {
+        // 파일을 읽어오는 데 성공하면 실행되는 함수
+        var image = new Image(); // 이미지 객체 생성
+        image.src = e.target.result; // 이미지 경로 설정
+
+        // 이미지 로딩이 완료되면 실행되는 함수
+        image.onload = function() {
+            var MAX_WIDTH = 150; // 최대 너비 설정
+            var MAX_HEIGHT = 150; // 최대 높이 설정
+
+            var canvas = document.createElement('canvas'); // 캔버스 생성
+            var ctx = canvas.getContext('2d'); // 캔버스 컨텍스트 가져오기
+
+            var width = image.width; // 이미지 너비 가져오기
+            var height = image.height; // 이미지 높이 가져오기
+
+            // 이미지 크기 조정
+            if (width > height) {
+                if (width > MAX_WIDTH) {
+                    height *= MAX_WIDTH / width;
+                    width = MAX_WIDTH;
+                }
+            } else {
+                if (height > MAX_HEIGHT) {
+                    width *= MAX_HEIGHT / height;
+                    height = MAX_HEIGHT;
+                }
+            }
+
+            // 캔버스 크기 설정
+            canvas.width = width;
+            canvas.height = height;
+
+            // 캔버스에 원형 모양으로 이미지 그리기
+            ctx.beginPath();
+            ctx.arc(width / 2, height / 2, Math.min(width, height) / 2, 0, Math.PI * 2);
+            ctx.closePath();
+            ctx.clip();
+            ctx.drawImage(image, 0, 0, width, height);
+
+            // 원형 모양으로 잘린 이미지를 프로필 이미지 영역에 추가
+            var profileArea = document.querySelector('.profile-picture .profile');
+            profileArea.innerHTML = '';
+            profileArea.appendChild(canvas);
+        };
+    };
+
+    reader.readAsDataURL(file); // 파일을 읽어 데이터 URL로 변환
 });

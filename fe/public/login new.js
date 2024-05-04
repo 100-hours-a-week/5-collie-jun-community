@@ -48,27 +48,30 @@ document.addEventListener("DOMContentLoaded", function() {
         const enteredUsername = emailInput.value;
         const enteredPassword = passwordInput.value;
 
-        // JSON 파일에서 사용자 데이터를 가져옴
-        fetch('data.json')
-            .then(response => response.json())
-            .then(data => {
-                // 사용자 데이터에서 입력된 이메일과 일치하는 사용자를 찾음
-                const user = data.users.find(user => user.email === enteredUsername);
-
-                if (!user) {
-                    // 사용자가 존재하지 않는 경우
-                    helperText.textContent = '*등록되지 않은 이메일입니다';
-                } else if (user.password !== enteredPassword) {
-                    // 비밀번호가 일치하지 않는 경우
-                    helperText.textContent = '*비밀번호가 다릅니다';
-                } else {
-                    // 로그인 성공
-                    // 예: 다음 페이지로 리다이렉트
-                    alert('로그인했습니다.');
-                    window.location.href = "/main";
-                }
-            })
-            .catch(error => console.error('Error fetching data:', error));
+        // 서버로 로그인 요청을 보냄
+        fetch("http://localhost:8081/login", {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ enteredUsername, enteredPassword })
+        })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('로그인에 실패했습니다.'); // 서버에서 오류 응답일 때
+            }
+            return response.json();
+        })
+        .then(data => {
+            // 로그인 성공
+            alert('로그인했습니다.');
+            window.location.href = "/main";
+        })
+        .catch(error => {
+            console.error('Error logging in:', error);
+            // 서버 오류나 로그인 실패에 대한 처리
+            alert ('로그인에 실패했습니다.');
+        });
     });
 
 });
