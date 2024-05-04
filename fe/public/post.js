@@ -142,7 +142,7 @@ async function fetchPosts() {
         // id와 일치하는 게시물만 필터링
         const postId = urlParams.get('postId'); // postId 변수를 먼저 선언
 
-        const response = await fetch('/postdata.json'); // JSON 파일 경로 수정
+        const response = await fetch('http://localhost:8081/post/posts'); // JSON 파일 경로 수정
         const jsonData = await response.json();
 
         console.log(postId); // postId 출력
@@ -158,7 +158,7 @@ async function fetchPosts() {
             document.querySelector(".post-text").innerHTML = post.content;
             document.querySelector(".post-count").innerHTML = `<div style="display: flex; flex-direction: column; align-items: center;"><strong>조회수</strong> ${post.views}</div>`;
             document.querySelector(".comment-count").innerHTML = `<div style="display: flex; flex-direction: column; align-items: center;"><strong>댓글</strong> ${post.comments}</div>`;
-            // 첫 번째 댓글 정보 가져오기
+            // 댓글 정보 가져오기
             const firstComment = post.cmt[0];
             if (firstComment) {
                 document.querySelector(".firstcomment .comment-gray-circle").innerHTML = `<img width='100%' height='100%' style='border-radius:100%' src=${firstComment.commenterImage}>`;

@@ -60,7 +60,7 @@ document.querySelector('.dropdown-content a:nth-of-type(3)')
 async function fetchPosts() {
     const urlParams = new URLSearchParams(window.location.search); // 여기로 이동
     try {
-        const response = await fetch('/postdata.json'); // JSON 파일 경로 수정
+        const response = await fetch('http://localhost:8081/post/posts'); // JSON 파일 경로 수정
         const jsonData = await response.json();
 
         console.log(urlParams);

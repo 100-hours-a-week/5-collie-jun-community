@@ -41,7 +41,6 @@ document.querySelector('.dropdown-content a:nth-of-type(3)').addEventListener('c
 
 
 // JSON 데이터를 가져오는 함수
-// JSON 데이터를 가져오는 함수
 async function fetchPostsFromBackend() {
     try {
         const response = await fetch('http://localhost:8081/post/posts'); // 백엔드 API 엔드포인트 호출
