@@ -1,15 +1,46 @@
 {
-    "users": [
-      {
-        "nickname" : "더미1",
-        "email": "user1@example.com",
-        "password": "password1"
-      },
-      {
-        "nickname" : "더미2",
-        "email": "user2@example.com",
-        "password": "password2"
-      }
-    ]
-  }
-  
+  "users": [
+    {
+      "nickname": "더미1",
+      "email": "user1@example.com",
+      "profile_image": "https://randomuser.me/api/portraits/men/4.jpg",
+      "password": "password1"
+    },
+    {
+      "nickname": "더미2",
+      "email": "user2@example.com",
+      "profile_image": "https://randomuser.me/api/portraits/men/5.jpg",
+      "password": "password2"
+    },
+    {
+      "nickname": "더미3",
+      "email": "user3@example.com",
+      "profile_image": "https://randomuser.me/api/portraits/men/6.jpg",
+      "password": "password3"
+    },
+    {
+      "email": "user4@example.com",
+      "password": "password4",
+      "profile_image": "https://randomuser.me/api/portraits/men/4.jpg",
+      "nickname": "더미4"
+    },
+    {
+      "email": "user5@example.com",
+      "password": "password5",
+      "profile_image": "https://randomuser.me/api/portraits/men/4.jpg",
+      "nickname": "더미5"
+    },
+    {
+      "email": "user6@example.com",
+      "password": "password6",
+      "profile_image": "https://randomuser.me/api/portraits/men/4.jpg",
+      "nickname": "더미6"
+    },
+    {
+      "email": "user7@example.com",
+      "password": "password7",
+      "nickname": "더미7",
+      "profilePic": null
+    }
+  ]
+}

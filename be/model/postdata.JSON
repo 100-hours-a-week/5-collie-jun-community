@@ -1,173 +1,170 @@
 [
-    {
-      "id": 1,
-      "title": "첫 번째 게시글",
-      "content": "이것은 첫 번째 게시글의 내용입니다.",
-      "post_image": "https://picsum.photos/id/1/200/300",
-      "comments": 15,
-      "likes": 20,
-      "views": 100,
-      "timestamp": "2024-04-18 12:30:00",
-      "profile_image": "https://randomuser.me/api/portraits/men/4.jpg",
-      "nickname": "더미1",
-      "cmt": [
-        {
-          "commentId": 1,
-          "commentText": "wow",
-          "commenter": "가나다",
-          "commenterImage": "https://randomuser.me/api/portraits/men/10.jpg",
-          "commentDate": "2024-04-01 10:22:33"
-        },
-        {
-          "commentId": 2,
-          "commentText": "lmo",
-          "commenter": "마바사",
-          "commenterImage": "https://randomuser.me/api/portraits/men/11.jpg",
-          "commentDate": "2024-04-15 16:22:33"
-        }
-      ]
-      
-    }, 
-    {
-      "id": 2,
-      "title": "두 번째 게시글",
-      "content": "이것은 두 번째 게시글의 내용입니다.",
-      "post_image": "https://picsum.photos/id/2/200/300",
-      "comments": 10,
-      "likes": 25,
-      "views": 80,
-      "profile_image": "https://randomuser.me/api/portraits/men/5.jpg",
-      "nickname": "더미2",
-      "timestamp": "2024-04-19 09:45:00",
-      "cmt": [
-        {
-          "commentId": 1,
-          "commentText": "wow",
-          "commenter": "가나다",
-          "commenterImage": "https://randomuser.me/api/portraits/men/12.jpg",
-          "commentDate": "2024-04-01 10:22:33"
-        },
-        {
-          "commentId": 2,
-          "commentText": "lmo",
-          "commenter": "마바사",
-          "commenterImage": "https://randomuser.me/api/portraits/men/13.jpg",
-          "commentDate": "2024-04-15 16:22:33"
-        }
-      ]
-    },
-    {
-      "id": 3,
-      "title": "세 번째 게시글",
-      "content": "이것은 세 번째 게시글의 내용입니다.",
-      "post_image": "https://picsum.photos/id/3/200/300",
-      "comments": 8,
-      "likes": 18, 
-      "views": 120,
-      "profile_image": "https://randomuser.me/api/portraits/men/6.jpg",
-      "nickname": "더미3",
-      "timestamp": "2024-04-20 15:20:00",
-      "cmt": [
-        {
-          "commentId": 1,
-          "commentText": "wow",
-          "commenter": "가나다",
-          "commenterImage": "https://randomuser.me/api/portraits/men/14.jpg",
-          "commentDate": "2024-04-01 10:22:33"
-        },
-        {
-          "commentId": 2,
-          "commentText": "lmo",
-          "commenter": "마바사",
-          "commenterImage": "https://randomuser.me/api/portraits/men/15.jpg",
-          "commentDate": "2024-04-15 16:22:33"
-        }
-      ]
-    }
-    ,
-    {
-      "id": 4,
-      "title": "네 번째 게시글",
-      "content": "이것은 네 번째 게시글의 내용입니다.",
-      "post_image": "https://picsum.photos/id/4/200/300",
-      "comments": 29,
-      "likes": 135,
-      "views": 200,
-      "timestamp": "2024-04-20 17:30:00",
-      "profile_image": "https://randomuser.me/api/portraits/men/7.jpg",
-      "nickname": "더미4",
-      "cmt": [
-        {
-          "commentId": 1,
-          "commentText": "wow",
-          "commenter": "가나다",
-          "commenterImage": "https://randomuser.me/api/portraits/men/16.jpg",
-          "commentDate": "2024-04-01 10:22:33"
-        },
-        {
-          "commentId": 2,
-          "commentText": "lmo",
-          "commenter": "마바사",
-          "commenterImage": "https://randomuser.me/api/portraits/men/17.jpg",
-          "commentDate": "2024-04-15 16:22:33"
-        }
-      ]
-      
-    },
-    {
-      "id": 5,
-      "title": "다섯 번째 게시글",
-      "content": "이것은 다섯 번째 게시글의 내용입니다.",
-      "post_image": "https://picsum.photos/id/5/200/300",
-      "comments": 4,
-      "likes": 9,
-      "views": 18,
-      "profile_image": "https://randomuser.me/api/portraits/men/8.jpg",
-      "nickname": "더미5",
-      "timestamp": "2024-04-21 09:30:00",
-      "cmt": [
-        {
-          "commentId": 1,
-          "commentText": "wow",
-          "commenter": "가나다",
-          "commenterImage": "https://randomuser.me/api/portraits/men/18.jpg",
-          "commentDate": "2024-04-01 10:22:33"
-        },
-        {
-          "commentId": 2,
-          "commentText": "lmo",
-          "commenter": "마바사",
-          "commenterImage": "https://randomuser.me/api/portraits/men/19.jpg",
-          "commentDate": "2024-04-15 16:22:33"
-        }
-      ]
-    },
-    {
-      "id": 6,
-      "title": "여섯 번째 게시글",
-      "content": "이것은 여섯 번째 게시글의 내용입니다.",
-      "post_image": "https://picsum.photos/id/6/200/300",
-      "comments": 23,
-      "likes": 35, 
-      "views": 129,
-      "profile_image": "https://randomuser.me/api/portraits/men/9.jpg",
-      "nickname": "더미6",
-      "timestamp": "2024-04-22 11:20:00",
-      "cmt": [
-        {
-          "commentId": 1,
-          "commentText": "wow",
-          "commenter": "가나다",
-          "commenterImage": "https://randomuser.me/api/portraits/men/20.jpg",
-          "commentDate": "2024-04-01 10:22:33"
-        },
-        {
-          "commentId": 2,
-          "commentText": "lmo",
-          "commenter": "마바사",
-          "commenterImage": "https://randomuser.me/api/portraits/men/21.jpg",
-          "commentDate": "2024-04-15 16:22:33"
-        }
-      ]
-    }
+  {
+    "id": 1,
+    "title": "첫 번째 게시글",
+    "content": "이것은 첫 번째 게시글의 내용입니다.",
+    "post_image": "https://picsum.photos/id/1/200/300",
+    "comments": 15,
+    "likes": 20,
+    "views": 100,
+    "timestamp": "2024-04-18 12:30:00",
+    "profile_image": "https://randomuser.me/api/portraits/men/4.jpg",
+    "nickname": "더미1",
+    "cmt": [
+      {
+        "commentId": 1,
+        "commentText": "wow",
+        "commenter": "가나다",
+        "commenterImage": "https://randomuser.me/api/portraits/men/10.jpg",
+        "commentDate": "2024-04-01 10:22:33"
+      },
+      {
+        "commentId": 2,
+        "commentText": "lmo",
+        "commenter": "마바사",
+        "commenterImage": "https://randomuser.me/api/portraits/men/11.jpg",
+        "commentDate": "2024-04-15 16:22:33"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "title": "두 번째 게시글",
+    "content": "이것은 두 번째 게시글의 내용입니다.",
+    "post_image": "https://picsum.photos/id/2/200/300",
+    "comments": 10,
+    "likes": 25,
+    "views": 80,
+    "profile_image": "https://randomuser.me/api/portraits/men/5.jpg",
+    "nickname": "더미2",
+    "timestamp": "2024-04-19 09:45:00",
+    "cmt": [
+      {
+        "commentId": 1,
+        "commentText": "wow",
+        "commenter": "가나다",
+        "commenterImage": "https://randomuser.me/api/portraits/men/12.jpg",
+        "commentDate": "2024-04-01 10:22:33"
+      },
+      {
+        "commentId": 2,
+        "commentText": "lmo",
+        "commenter": "마바사",
+        "commenterImage": "https://randomuser.me/api/portraits/men/13.jpg",
+        "commentDate": "2024-04-15 16:22:33"
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "title": "세 번째 게시글",
+    "content": "이것은 세 번째 게시글의 내용입니다.",
+    "post_image": "https://picsum.photos/id/3/200/300",
+    "comments": 8,
+    "likes": 18,
+    "views": 120,
+    "profile_image": "https://randomuser.me/api/portraits/men/6.jpg",
+    "nickname": "더미3",
+    "timestamp": "2024-04-20 15:20:00",
+    "cmt": [
+      {
+        "commentId": 1,
+        "commentText": "wow",
+        "commenter": "가나다",
+        "commenterImage": "https://randomuser.me/api/portraits/men/14.jpg",
+        "commentDate": "2024-04-01 10:22:33"
+      },
+      {
+        "commentId": 2,
+        "commentText": "lmo",
+        "commenter": "마바사",
+        "commenterImage": "https://randomuser.me/api/portraits/men/15.jpg",
+        "commentDate": "2024-04-15 16:22:33"
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "title": "네 번째 게시글",
+    "content": "이것은 네 번째 게시글의 내용입니다.",
+    "post_image": "https://picsum.photos/id/4/200/300",
+    "comments": 29,
+    "likes": 135,
+    "views": 200,
+    "timestamp": "2024-04-20 17:30:00",
+    "profile_image": "https://randomuser.me/api/portraits/men/7.jpg",
+    "nickname": "더미4",
+    "cmt": [
+      {
+        "commentId": 1,
+        "commentText": "wow",
+        "commenter": "가나다",
+        "commenterImage": "https://randomuser.me/api/portraits/men/16.jpg",
+        "commentDate": "2024-04-01 10:22:33"
+      },
+      {
+        "commentId": 2,
+        "commentText": "lmo",
+        "commenter": "마바사",
+        "commenterImage": "https://randomuser.me/api/portraits/men/17.jpg",
+        "commentDate": "2024-04-15 16:22:33"
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "title": "다섯 번째 게시글",
+    "content": "이것은 다섯 번째 게시글의 내용입니다.",
+    "post_image": "https://picsum.photos/id/5/200/300",
+    "comments": 4,
+    "likes": 9,
+    "views": 18,
+    "profile_image": "https://randomuser.me/api/portraits/men/8.jpg",
+    "nickname": "더미5",
+    "timestamp": "2024-04-21 09:30:00",
+    "cmt": [
+      {
+        "commentId": 1,
+        "commentText": "wow",
+        "commenter": "가나다",
+        "commenterImage": "https://randomuser.me/api/portraits/men/18.jpg",
+        "commentDate": "2024-04-01 10:22:33"
+      },
+      {
+        "commentId": 2,
+        "commentText": "lmo",
+        "commenter": "마바사",
+        "commenterImage": "https://randomuser.me/api/portraits/men/19.jpg",
+        "commentDate": "2024-04-15 16:22:33"
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "title": "여섯 번째 게시글",
+    "content": "이것은 여섯 번째 게시글의 내용입니다.",
+    "post_image": "https://picsum.photos/id/6/200/300",
+    "comments": 23,
+    "likes": 35,
+    "views": 129,
+    "profile_image": "https://randomuser.me/api/portraits/men/9.jpg",
+    "nickname": "더미6",
+    "timestamp": "2024-04-22 11:20:00",
+    "cmt": [
+      {
+        "commentId": 1,
+        "commentText": "wow",
+        "commenter": "가나다",
+        "commenterImage": "https://randomuser.me/api/portraits/men/20.jpg",
+        "commentDate": "2024-04-01 10:22:33"
+      },
+      {
+        "commentId": 2,
+        "commentText": "lmo",
+        "commenter": "마바사",
+        "commenterImage": "https://randomuser.me/api/portraits/men/21.jpg",
+        "commentDate": "2024-04-15 16:22:33"
+      }
+    ]
+  }
 ]

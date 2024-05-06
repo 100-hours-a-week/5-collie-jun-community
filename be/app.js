@@ -9,7 +9,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 const userRoutes = require("./routes/userroute");
-const postRoutes = require("./routes/postroute")
+const postRoutes = require("./routes/postroute");
 
 const port = 8081;
 
@@ -20,11 +20,11 @@ app.use(
   })
 );
 //app.use(cors());
-app.use("/users", userRoutes); // userRoutes를 사용합니다.
+app.use("/users", userRoutes);
 app.use("/", userRoutes);
-app.use("/post",postRoutes);
+app.use("/post", postRoutes);
+app.use("/uploads", express.static("uploads")); // 밖에서 uploads 폴더 접근하게 하기
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`);
 });
-

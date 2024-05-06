@@ -1,8 +1,6 @@
-// main.js
 "use strict"; 
 
-document.querySelector('.beforebutton')
-.addEventListener('click', function(event) {
+document.querySelector('.beforebutton').addEventListener('click', function(event) {
     event.preventDefault(); // 기본 제출 동작을 막음
     
     // 현재 페이지 URL에서 postId 값을 추출
@@ -21,8 +19,7 @@ document.querySelector('.beforebutton')
 });
 
 // 이미지 클릭 이벤트
-document.querySelector('.image')
-.addEventListener('click', function(event) {
+document.querySelector('.image').addEventListener('click', function(event) {
     event.stopPropagation(); // 부모 요소의 이벤트 전파 차단
     var dropdownContent = document.getElementById('dropdownContent');
     dropdownContent.classList.toggle('show');
@@ -37,25 +34,43 @@ document.addEventListener('click', function() {
 });
 
 // 회원정보 수정 클릭 이벤트
-document.querySelector('.dropdown-content a:nth-of-type(1)')
-.addEventListener('click', function(event) {
+document.querySelector('.dropdown-content a:nth-of-type(1)').addEventListener('click', function(event) {
     event.preventDefault(); // 링크 기본 동작 막음
     window.location.href = "/editprofile"; // 이동할 URL 지정
 });
 
 // 비밀번호 수정 클릭 이벤트
-document.querySelector('.dropdown-content a:nth-of-type(2)')
-.addEventListener('click', function(event) {
+document.querySelector('.dropdown-content a:nth-of-type(2)').addEventListener('click', function(event) {
     event.preventDefault(); // 링크 기본 동작 막음
     window.location.href = "/editpassword"; // 이동할 URL 지정
 });
 
 // 로그아웃 클릭 이벤트
-document.querySelector('.dropdown-content a:nth-of-type(3)')
-.addEventListener('click', function(event) {
+document.querySelector('.dropdown-content a:nth-of-type(3)').addEventListener('click', function(event) {
     event.preventDefault(); // 링크 기본 동작 막음
     window.location.href = "/login"; // 이동할 URL 지정
 });
+
+async function updatePost(postId, updatedTitle, updatedContent) {
+    try {
+        const response = await fetch(`http://localhost:8081/post/posts/${postId}`, {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                title: updatedTitle,
+                content: updatedContent
+            })
+        });
+        const updatedPost = await response.json();
+        console.log('Updated post:', updatedPost);
+        return updatedPost;
+    } catch (error) {
+        console.error('Error updating post:', error);
+        throw error;
+    }
+}
 
 async function fetchPosts() {
     const urlParams = new URLSearchParams(window.location.search); // 여기로 이동
@@ -72,11 +87,28 @@ async function fetchPosts() {
         document.getElementById('title').value = post.title;
         document.getElementById('content').value = post.content;
 
-        document.getElementById('post-form').addEventListener('submit', function(event) {
-        event.preventDefault(); // 기본 제출 동작 막기
-        const postId = urlParams.get('postId'); // postId 가져오기
-        const url = `/post.html?postId=${postId}`;// 폼 데이터를 제출할 URL 생성
-        window.location.href = url;
+        // 폼 제출 이벤트에 대한 이벤트 핸들러 등록
+        document.getElementById('post-form').addEventListener('submit', async function(event) {
+            event.preventDefault(); // 기본 제출 동작 막기
+
+            const urlParams = new URLSearchParams(window.location.search); // 현재 URL에서 쿼리 매개변수 추출
+            const postId = urlParams.get('postId'); // postId 가져오기
+
+            // 수정할 포스트의 제목과 내용 가져오기
+            const updatedTitle = document.getElementById('title').value;
+            const updatedContent = document.getElementById('content').value;
+
+            try {
+                // 포스트 업데이트 요청 보내기
+                await updatePost(postId, updatedTitle, updatedContent);
+                // 업데이트 후 포스트 다시 불러오기
+                await fetchPosts();
+
+                const url = `post.html?postId=${postId}`;
+                window.location.href = url;
+            } catch (error) {
+                console.error('Error updating or fetching posts:', error);
+            }
         });
         
     } catch (error) {
