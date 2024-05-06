@@ -1,10 +1,6 @@
 // login new.js
 "use strict"; 
-// 로그인 버튼 클릭 이벤트 처리
-/*document.querySelector('.login-form').addEventListener('submit', function(event) {
-    event.preventDefault(); // 기본 제출 동작을 막음
-    window.location.href = "/main"; // 이동할 URL 지정
-});*/
+
 
 document.querySelector('.signup-link')
 .addEventListener('click', function(event) {

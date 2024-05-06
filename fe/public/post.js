@@ -9,13 +9,13 @@ document.querySelector('.beforebutton').addEventListener('click', function(event
 // 이미지 클릭 이벤트
 document.querySelector('.image').addEventListener('click', function(event) {
     event.stopPropagation(); // 부모 요소의 이벤트 전파 차단
-    var dropdownContent = document.getElementById('dropdownContent');
+    const dropdownContent = document.getElementById('dropdownContent');
     dropdownContent.classList.toggle('show');
 });
 
 // dropdown content 외 다른 곳 클릭 이벤트
 document.addEventListener('click', function() {
-    var dropdownContent = document.getElementById('dropdownContent');
+    const dropdownContent = document.getElementById('dropdownContent');
     if (dropdownContent.classList.contains('show')) {
         dropdownContent.classList.remove('show');
     }
