@@ -1,10 +1,21 @@
 const fs = require("fs");
 
 // JSON 파일 경로
-const jsonFilePath =
-  "/Users/jeon-yeonju/Desktop/expressjs/5-collie-jun-community/be/model/data.JSON";
+const jsonFilePath = "/Users/jeon-yeonju/Desktop/expressjs/5-collie-jun-community/be/model/data.JSON";
 
-//로그인 함수
+// 사용자 인증 미들웨어
+const isAuthenticated = (req, res, next) => {
+  // 요청 객체에 user 속성이 있으면(로그인한 상태라면)
+  if (req.user) {
+    // 다음 미들웨어로 전달
+    next();
+  } else {
+    // 로그인하지 않은 경우
+    return res.status(401).json({ error: "로그인이 필요합니다." });
+  }
+};
+
+// 로그인 함수
 const login = (req, res) => {
   const { enteredUsername, enteredPassword } = req.body;
   
@@ -69,8 +80,6 @@ const checkEmail = (req, res) => {
   });
 };
 
-
-
 // 닉네임 중복 확인 함수
 const checkNickname = (req, res) => {
   const { nickname } = req.body;
@@ -99,7 +108,6 @@ const checkNickname = (req, res) => {
     }
   });
 };
-
 
 // 회원가입 함수
 const register = (req, res) => {
@@ -160,5 +168,6 @@ module.exports = {
   login,
   checkNickname,
   checkEmail,
-  register
+  register,
+  isAuthenticated,
 };
